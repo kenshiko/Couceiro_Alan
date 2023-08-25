@@ -1,0 +1,263 @@
+/* IMPORTAMOS DE GOOGLE FONTS EL TIPO DE LETRA QUE UTILIZAMOS.*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
+
+
+/* UN RESETEO. CON ESTO SE EVITA ALGUNOS ESTILOS QUE YA VIENEN POR DEFECTO EN EL HTML. */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    background-color: white;
+}
+
+                    /* PASO 1. HEADER */
+
+/* Aplicamos un calculo para el width. De este modo, el logo no tendra un ancho fijo, sino que se adaptara al tamaño de la pantalla. Este representa la unidad de medida variable de 5VW (varia segun el ancho del viewport) y 120pixeles que es la unidad de medida fija. */
+.logo{
+    width: calc(5vw + 120px);
+}
+
+
+/* Un display flex el cual separa el contenido del encabezado en dos partes y un justify content que mueve a sus respectivas esquinas cada una de las partes (las acomoda de manera horizontal). */
+.encabezado{
+    background-color: #c18e41;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mismo caso de antes, con un align items center. De este modo acomodamos de manera vertical, en el centro el contenido.  El font-weight:bold para darle negrita al texto*/
+.encabezado_izquierdo{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Este es el contenedor del titulo y el slogan. Le damos efecto de sombras, un margen de izquierda y derecha para separarlo de la imagen y centramos el texto. */
+.contenedor_titulo{
+    margin: 0px 40px;
+    text-align: center;
+    text-shadow: 1px 1px 7px rgb(255, 255, 255);
+}
+
+/* aplicamos un nowrap para que no se corte el texto. */
+.titulo_texto{
+    white-space: nowrap;
+    font-size: calc(1vw + 8px);
+}
+
+.encabezado_derecho{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 0 0;
+}
+
+.contador h3{
+    text-align: center;
+    padding: 5px;
+}
+
+.barra_navegacion{
+    padding: 0px 15px 3px 0;
+    gap: calc(4vw + 8px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+
+/* el text decoration none lo utilizamos para sacar el estilo que trae los links por defecto. Aplicamos un grosor de 500 a la fuente y un tamaño de 20px. Esto se aplica a los elementos de la barra de navegacion. */
+.barra_navegacion a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    text-shadow: 1px 1px 7px rgba(0,0,0,1);
+}
+
+
+                    /* PASO 2. MAIN, CONTENIDO PRINCIPAL */
+
+/* Todo similar a lo anterior, pero agregamos un border-radius. Este sirve para que los bordes esten redondeados. */
+.img_empanada{
+    border-radius: 8px;
+    width: calc(8vw + 60px);
+    height: calc(8vw + 60px);
+}
+
+.img_principal{
+    margin:calc(3px + 5vh) 0;
+    width: calc(15vw + 100px);
+    border-radius: 20px;
+    box-shadow: 4px 4px 16px 2px rgba(0,0,0,0.81);
+
+}
+
+
+/* En el menu principal aplicaremos grid y separaremos el contenido en 2. Con grid-template-column asignamos la medida que le corresponde a cada parte. Fr es la unidad de medida fraccion, asi que la parte izquierda sera un poco mas grande que la parte derecha. El gap da espaciado a los contenedores dentro del contenedor padre. */
+.principal{
+    padding-top: 20px;
+    background-color: #ffbd59 ;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+
+.articulo_principal{
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.articulo_principal p{
+    font-size: 22px;
+}
+
+
+/* ASIDE */
+
+/* border, una propiedad que aun no explicamos. Esta crea como bien dice, un borde. En este caso, del lado izquierdo del contenedor (left). La medida de ese borde es de 1 pixel, el tipo de borde es solido y el color sera negro. */
+.apartado_principal{
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-left: 1px solid black;
+}
+
+
+.contenedor_lista{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px;
+}
+.lista{
+    display: flex;
+    gap: 20px;
+    padding: 10px 5px;
+    align-items: center;
+}
+
+/* FORMULARIO */
+
+.seccion_formulario{
+    padding: 15px;
+    background-color: #ffbd59;
+}
+
+.seccion_formulario h2{
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    margin: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* El maxwidht en este caso establece un ancho maximo. Es decir que el contenido nunca podra exceder 880px. */
+.formulario{
+    max-width: 880px;
+    border: white 5px dashed;
+    margin: 0 auto;
+    background-color: black;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.input{
+    width: 100%;
+    padding: 5px 0;
+}
+
+/* Cuando usamos grid, lo que hacemos es establecer filas y columnas. En cada una de estas estaran sus respectivos contenedores. Grid colum le asigna a un contenedor las columnas que nosotros queremos ocupar, en este caso, de la linea 1 a la linea 3. (como en el formulario solo hay 2 columnas, ocupara ambas columnas).
+ACLARACION: Si nosotros Dibujamos un cuadro cerrado de 2 columnas, esta tendra 3 lineas verticales. El grid colum representa eso, las columnas verticales, en este caso, desde la primera hasta la ultima. Es por esto que ocuamos las 2 columnas */
+.correo{
+    grid-column: 1 / 3;
+}
+
+.textarea{
+    grid-column: 1 / 3;
+}
+
+.enviar{
+    grid-column: 1 / 3;
+    margin: auto;
+}
+
+.boton{
+    padding: 10px 40px;
+    background-color: #ffbd59;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* FOOTER */
+
+.pie{
+    background-color: #c18e41;
+    padding: 50px 10px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+/* RESPONSIVE */
+
+/* HEADER */
+
+/* FINALMENTE UN POCO DE RESPONSIVE. ACA APLICAMOS UN CAMBIO PARA LAS PANTALLAS MENORES A 768PX. EL MAX-WIDHT 768PX REPRESENTA QUE TODO LO QUE APLIQUEMOS, SERVIRA SOLO HASTA UN ANCHO MAXIMO DE 768PX, POR ESO DECIMOS QUE ESTOS CAMBIOS SE APLICAN A PANTALLAS MENORES DE 768. CON EL EFECTO DE ESTILO EN CASCADA DE CSS, ESTAMOS HACIENDO QUE ESTAS PROPIEDADES TOMEN VALOR SOBRE LAS QUE SE ESCRIBIERON ANTERIORMENTE. */
+@media (max-width: 768px) {
+    /*EN EL ENCABEZADO CAMBIAREMOS LA DIRECCION DEL FLEX. ANTES ALINEABAMOS LOS CONTENEDORES DE IZQUIERDA A DERECHA. AHORA SERA DE ARRIBA HACIA ABAJO, ES DECIR, EN VERTICAL. */
+    .encabezado{
+        flex-direction: column;
+    }
+
+    .encabezado_izquierdo{
+        justify-content: center;
+    }
+
+    .encabezado_derecho{
+        padding: 0;
+    }
+
+    .contador{
+        display: none;
+    }
+
+    .barra_navegacion{
+        justify-content: space-evenly;
+        background-color: black;
+        padding: 10px;
+    }
+
+    /* CON ESTO, DESHACEMOS EL GRID UTILIZADO ANTERIORMENTE, DE MODO TAL QUE AHORA EL MAIN Y EL ASIDE VUELVEN A OCUPAR EL TOTAL DEL ANCHO DE LA PANTALLA, POSICIONADOS VERTICALMENTE. */
+    .principal{
+        display: inline-block;
+    }
+
+    /* CON ESTO, OCULTAMOS EL CONTENIDO QUE SE ENCONTRABA EN EL ASIDE */
+    .apartado_principal{
+        display: none;
+    }
+    /* ESTABLECEMOS EL MINIMO DE TAMAÑO DE LA IMAGEN, NO PODRA SER MENOR A 250PX. */
+    .img_principal{
+        min-width: 250px;
+    }
+}

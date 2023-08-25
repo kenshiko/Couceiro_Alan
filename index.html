@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"> <!-- Linkeamos nuestro html al css -->
+        <title>Document</title>
+    </head>
+
+    <!-- ACLARACION: Las clases es algo que debe ser orientativo y lo mas preciso posible. No todos vamos a pensar en lo mismo, en mi caso, trate de usar clases descriptivas para cada etiqueta. -->
+
+    <body>
+
+        <!-- Header. Con esta etiqueta realizamos el encabezado de la pagina, y dentro de ella, sus elementos correspondientes. En este caso, agregamos una barra de navegacion (nav) que contendra elementos URL (etiqueta a) que llevara a otra seccion de la web. Los div utilizados dentro del header son para separar etiquetas, asi poder ordenarlas y darle estilos mas facilmente a la hora de utilizar css -->
+        <header class="encabezado">
+            <div class="encabezado_izquierdo"> <!-- Este Div es un ejemplo de lo mencionado arriba. Con este DIV pongo el Logo de la pagina y lueg otro DIV que contendra el titulo y el slogan de la pagina. El proposito es que a la hora de utilizar Flexbox en css, el div padre, es decir, el de la clase "encabezado_izquierdo" separe el logo del texto junto al slogan. El Div hijo, osea, el de la clase contenedor_titulo, lo utilizamos para aplicarle flexbox justamente al titulo y el slogan, de esta manera, lo acomodamos de manera centrada uno abajo del otro. -->
+                <img id="pulsar" class="logo" src="img/3-logo-color.png" alt="Logo de la empresa">
+                <div class="contenedor_titulo">
+                    <h1 class="titulo">Maria Marta</h1>
+                    <p class="titulo_texto">Las mejores empanadas</p>
+                </div>
+            </div>
+            <div class="encabezado_derecho">
+                <div class="contador">
+                    <h2>Cuantas empanadas te gustaria comer? <span id="contador">0</span></h2>
+                    <h3>Preciona nuestro logo</h3>
+                </div>
+                <nav class="barra_navegacion"> <!-- Esta es la barra de navegacion ya mencionada, que se encuentra dentro del header en la esquina inferior derecha. Como la pagina no esta 100% completa utilizamos dentro de las url, en la propiedad href, un #, de modo tal que no nos llevara a ninguna seccion. Cuando creemos las otras secciones, este # debera ser reemplazada por la URL correspondiente. -->
+                    <a href="index.html">Inicio</a>
+                    <a onclick="inflacion()" href="#">Precios</a>
+                    <a onclick="contactar()" href="#">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Aca desarrollamos el contenido principal del a web. El main, contendra dentro un Articulo, con su respectiva informacion dentro de los parrafos (P) y con sus respectivas imagenes de muestra (img). Ademas, encontraremos el Aside. El aside suele encontrarse al costado de la web, como si fuese una barra lateral, proporcionando mayor informacion, que puede relacionarse con el contenido principal, pero no necesariamente es lo contenido que queremos desarrollar. -->
+        <main class="principal">
+            <article class="articulo_principal">
+                <p>Somos una franquicia internacional de empanadas creada en 1970. Con los
+                mejores ingredientes y la mejor preparacion, nos llevamos el reconocimiento
+                a las mejores empanadas de 2023. Tenemos sedes en todo el pais de la republica Argentina, asi que no dudes en abrir el google maps y buscar la sucursal mas cercana!</p>
+                <img class="img_principal" src="img/emp.jpg" alt="foto de empanada">
+                <p>Los invitamos a que prueben nuestras deliciosas empanadas de jamon y
+                queso, carne, pollo, humita, entre otras!. Ademas, en tu primera compra, te vamos a regalar un descuento del 25% si llevas 1 docena de empanadas. Incluyen unas salsas increible que vas a querer probar!.</p>
+                <img class="img_principal" src="img/emp2.jpg" alt="foto de empanada">
+            </article>
+            <aside class="apartado_principal">
+                <!-- Dentro del aside utilizamos na lista desordenada (ul) donde tendremos informacion de los distintos productos que ofrece la web. Cada uno de los items de la lista estaran dentro de un li (como hijos de la etiqueta ul), y dentro de los li es donde desarrollamos el contenido, en este caso, parrafos e imagenes -->
+                <ul class="contenedor_lista">
+                    <li class="lista">
+                        <img class="img_empanada" src="img/jyq2.webp" alt="empanada de jamon y queso">
+                        <p>Una empanada rellena en un excelente queso envuelto en jamon de la mejor calidad. Aprovecha y probalas, no te vas a arrepentir!. <br><span>Peso neto: 210 gramos</span></p>
+                    </li>
+                    <li class="lista">
+                        <img class="img_empanada" src="img/carne.png" alt="empanada de jamon y queso">
+                        <p>Una empanada rellena de carne cortada a cuchillo, con cebolla y morron salteado, y huevo. No vas a querer dejar de comer!  <br><span>Peso neto: 210 gramos</span></p>
+                    </li>
+                    <li class="lista">
+                        <img class="img_empanada" src="img/burger.jpg" alt="empanada de jamon y queso">
+                        <p>Te imaginas una hamburguesa dentro de una empanada? Te presentamos la empanada burger, rellena de carne picada, queso cheddar, panceta, huevo, cebolla. Lo mismo que una hamburguesa, pero en la empanada!  <br><span>Peso neto: 210 gramos</span></p>
+                    </li>
+                </ul>
+            </aside>
+        </main>
+
+        <!-- La tercera parte de nuestro index consiste en un formulario. Este estara dentro de una seccion, saliendo del contenido principal, encontrandose ya mucho mas abajo en la web. -->
+        <section id="formulario" class="seccion_formulario">
+            <h2>Envianos un comentario y participa por $10.000</h2>
+
+            <!-- Form es la etiqueta con la cual abrimos un formulario. Dentro de esta, se utiliza las etiquetas label e input. Label sirve para poner la descripcion del campo que vamos a rellenar. Si vemos el primer label, dice "Nombre", pues eso sera el campo a rellenar respectivamente (lo que se rellena es un campo que se crea con la etiqueta input). En el input pues se pondra el nombre.
+            Los divs no son necesarios para un formulario, sin embargo, los utilizo para luego facilitar la aplicacion del CSS. Hay diversas maneras de realizarlo y esta es una! -->
+
+            <form class="formulario" action="index.html" method="get"> <!-- Method get, que es esto? Pues el motodo sirve para enviar la informacion de nuestro formulario, existen distintas maneras, siendo las mas conocidas POST y GET. En nuestro caso elegimos Get, que sirve para que se pueda enviar la informacion. Esta respectivamente se mostrara en el URL al enviar el formulaio. Si nosotros ponemos en la casilla de nombre "Alan" y luego enviamos el formulario, al actualizarce la web, en la Url podremos ver como aparecera nuestro nombre de la siguiente manera: index.html?nombre=Alan&telefono=&email=&mensaje=. El resto de los campos quedo vacio, pero si se rellenan, pues apareceran. -->
+                <div>
+                    <label class="campo" for="">Nombre:</label>
+                    <input class="input" name="nombre" type="text" placeholder="Ingrese su nombre"> <!-- El placeholder establece un mensaje predeterminado dentro de los campos a rellenar para guiarnos. el name del input es lo que permite que al enviar el formulario, aparezca en el url la informacion. El type representa lo que podremos rellenar en dicho formulario, siendo texto, telefono, email, submit, etc. -->
+                </div>
+                <div>
+                    <label class="campo" for="">Telefono:</label>
+                    <input class="input" name="telefono" type="tel" placeholder="Ingrese su numero de telefono">
+                </div>
+                <div class="correo">
+                    <label class="campo" for="">Correo:</label>
+                    <input class="input" name="email" type="email" placeholder="Ingrese su correo electronico">
+                </div>
+
+                <div class="textarea">
+                    <label class="campo" for="">Mensaje:</label>
+                    <textarea placeholder="escriba su comentario" class="input" name="mensaje" id="" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="enviar">
+                    <input class="boton" type="submit" value="Enviar">
+                </div>
+            </form>
+        </section>
+        
+
+        <!-- Finalmente el footer. Este es el pie de pagina. Se ubica abajo de la web y suele mostrar por lo general derechos de autor, links con informacion que lleva a los terminos y condiciones, bases legales, contactos, etc. -->
+        <footer class="pie">
+            <p>Derecho de autor reservado en @2023 para que no me roben el contenido</p>
+        </footer>
+
+        <script src="main.js"></script>
+    </body>
+
+</html>
