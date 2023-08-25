@@ -1,3 +1,4 @@
+![BA Multiplica](https://i0.wp.com/www.barriada.com.ar/wp-content/uploads/2021/04/BAMultiplica.jpg?fit=500%2C392&ssl=1&resize=350%2C200)
 # Mi proyecto para BA MULTIPLICA promotores!
 
 Me presento, mi nombre es Alan Couceiro! Tengo 25 Años y sigo una carrera de economicas (Contador publico) en la universidad de la matanza. Si bien, estoy en mi 4to año de carrera, descubri que la programacion me resulta mucho mas atractivo y divertido a la hora de "trabajar". Empece hace 1 año, de manera autodidacta a estudiar programacion. Hace pocos meses me entere del curso de B.A. Multiplica 2.0 y realice dicho curso, terminandolo y quedando dentro de la preseleccion para ser promotor del mismo. Actualmente sigo estudiando de manera autodidacta al mismo tiempo que me capacito con estos cursos que suman mucho a la hora de aprenden.
