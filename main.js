@@ -43,5 +43,26 @@ function contactar(){
 });
 
 
+/* Esta ultima funcion combina un poco de cada cosa, podemos decir que consta de 3 pasos:
+Primero con el queryselectorAll seleccionamos todas nuestras etiquetas de html con la clase mantenimiento. Seguido de eso, aplicamos un forEach, que va a ejecutar nuestra funcion, 1 vez por cada elemento. En nuestro caso tenemos 3 elementos, que son las 3 etiquetas a de nuestro html seleccionadas (este va a ser el parametro de nuestra funcion Foreach, que denominamos url, pero puede contener cualquier nombre).
+
+Segundo, aplicamos eventos, que se activaran al pasar el mouse por nuestro elemento (mouseenter), estos eventos aplican estilos y cambio de texto a nuestro codigo, como ya vimos en ejemplos anteriores. 
+
+Finalmente al sacar el mouse del elemento (mouseleave) quitaremos todos los estilos volviendo al que estaba originalmente  */
+
+let enMantenimiento = document.querySelectorAll(".mantenimiento");
+enMantenimiento.forEach(function(url){
+    url.addEventListener("mouseenter", function(){
+        url.textContent = "en mantenimiento"
+        url.style.backgroundColor = "Black"
+        url.style.textAlign = "center"
+    })
+    url.addEventListener("mouseleave", function() {
+        url.textContent = "Ver mas";
+        url.style.backgroundColor = "#ffbd59"
+        url.style.textAlign = "left"
+    })
+});
+
   
   
